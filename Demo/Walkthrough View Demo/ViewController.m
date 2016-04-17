@@ -24,6 +24,7 @@
 @end
 
 @implementation ViewController {
+    BOOL introFirstRunShown;
     BOOL firstRowWalkthroughShown;
     BOOL secondRowWalkthroughShown;
     BOOL thirdRowWalkthroughShown;
@@ -84,12 +85,19 @@
 
 - (void) displayRequiredWalkthroughs {
     
-    if (!firstRowWalkthroughShown) {
+    if (!introFirstRunShown) {
         
-        [self showFirstRunWithText:@"This is your first row. Tap anywhere to continue."
-                      andIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
-                      andMaskEdges:CGRectMake(15, 15, - 2 * 15, - 2 * 15)
-               andShowTouchPointer:NO];
+        [self showIntroViewWithText:@"Welcome! Let's show you around."];
+        introFirstRunShown = YES;
+    }
+    else if (!firstRowWalkthroughShown) {
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self showFirstRunWithText:@"This is your first row. Tap anywhere to continue."
+                          andIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
+                          andMaskEdges:CGRectMake(15, 15, - 2 * 15, - 2 * 15)
+                   andShowTouchPointer:NO];
+        });
         firstRowWalkthroughShown = YES;
     }
     else if (!secondRowWalkthroughShown) {
@@ -128,6 +136,16 @@
         });
         firstRowWalkthroughWithTouchShown = YES;
     }
+}
+
+- (BOOL) showIntroViewWithText: (NSString *) text {
+    
+    [self createWalkthroughViewWithTouchPointer:NO];
+    [_walkthrough setText:text];
+    [[UIApplication sharedApplication].keyWindow addSubview:_walkthrough];
+    [_walkthrough show];
+    
+    return YES;
 }
 
 - (BOOL) showFirstRunWithText: (NSString *) text
