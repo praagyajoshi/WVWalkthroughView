@@ -1,8 +1,8 @@
 # WVWalkthroughView
 
-A simple utility written in Objective C to help developers walk a user through their app. It allows a particular part of the screen be highlighted and the touch in the highlighted area to be optionally passed through.
+A simple utility written in Objective C to help developers walk a user through their app. It allows a message to be dispalyed, a particular part of the screen to be (optionally) highlighted and the touch in the highlighted area to be (optionally) passed through.
 
-The first runs and walkthroughs, in my opinion, are one of the key most important ways to make a user feel comfortable with a new app.
+The first runs and walkthroughs, in my opinion, are one of the most important ways to make a user feel comfortable in a new app.
 
 ### Screenshots
 Use it however you like - highlighting a particular element, with a touch pointer or covering the whole screen.
@@ -19,4 +19,4 @@ There are various properties to play around with and they have been explained in
 There is a demo project included to showcase a few of the options.
 
 ### License
-`WVWalkthroughView` has been released under an [MIT License](http://opensource.org/licenses/MIT). I'll be extremely happy if you provice attribution and let me know if you use it in your app.
+`WVWalkthroughView` has been released under an [MIT License](http://opensource.org/licenses/MIT). I'll be extremely happy if you provide attribution and let me know if you use it in your app.
