@@ -23,3 +23,8 @@ There is a demo project included to showcase a few of the options.
 
 ### License
 `WVWalkthroughView` has been released under an [MIT License](http://opensource.org/licenses/MIT). I'll be extremely happy if you provide attribution and let me know if you use it in your app.
+
+
+---
+
+[www.praagya.com](http://www.praagya.com)
